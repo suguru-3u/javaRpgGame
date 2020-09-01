@@ -9,9 +9,9 @@ public class Hero extends Character{
   // コンストラクト
   public Hero(String name){
     this.name = name;
-    this.hp = 100;
+    this.hp = 1000;
     this.level = 1;
-    this.offensivepower = 10;
+    this.offensivepower = 10000;
     this.experiencepoint = 0;
     this.levelUpValue = 50;
   }

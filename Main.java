@@ -144,6 +144,17 @@ public class Main{
     }
 
     // 近衛隊との戦い
+    System.out.println("");
+    System.out.println("");
+    System.out.println("---------------------------------------------------------" );
+    System.out.println("");
+    System.out.println("");
+    System.out.println("~~~魔王城への道~~~");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("---------------------------------------------------------" );
+    System.out.println("");
+    System.out.println("");
     System.out.println(h.name + "は魔王城を目指し冒険を始めた！");
     System.out.println("そこにはなぜか、魔王城にいる近衛隊がいた.....理由はわからないが魔王が近くにいるかもしれない。\n近衛隊を倒して魔王の情報を聞き出そう！");
     System.out.println("");
@@ -192,6 +203,86 @@ public class Main{
       }
     }
 
+    System.out.println("近衛隊からなんと近くに魔王がいることが判明した！\nさあ、魔王を倒していこう！");
 
+    // 魔王戦
+    System.out.println("");
+    System.out.println("");
+    System.out.println("---------------------------------------------------------" );
+    System.out.println("");
+    System.out.println("");
+    System.out.println("魔王戦");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("---------------------------------------------------------" );
+    System.out.println("");
+    System.out.println("");
+
+    System.out.println("");
+    System.out.println("");
+    System.out.println("魔王を偶然、見つけた勇者はついに戦いを挑んだ！果たして勇者は魔王を倒せるのか？");
+    System.out.println("");
+    System.out.println("");
+
+    Devil d = new Devil();
+    int q = 0;
+    int p = 0;
+    int heroHp2 = h.getHp();
+    int devilHp = d.getHp();
+    d.talk(1);
+    while(q == 0){
+      System.out.println("");
+      System.out.println("");
+      System.out.println("敵の名前 " + d.name + " : HP " + devilHp);
+      System.out.println("");
+      System.out.println("");
+      System.out.println("アタックする場合は半角の数字の1を入力してください!");
+      System.out.println("行動を選択してください!");
+      System.out.println("");
+      System.out.println("");
+      int selected = new java.util.Scanner(System.in).nextInt();
+      switch(selected){
+        case 1:
+        devilHp = h.attack(d,devilHp);
+        heroHp2 = d.attack(h,heroHp2);
+        if(heroHp2 <= 0){
+          System.out.println("HPは0になりました...");
+          System.out.println("GAME OVER");
+          q += 1;
+          break;
+        }
+        if(devilHp <= 0){
+          q += 1;
+          System.out.println("");
+          System.out.println("");
+          System.out.println("戦闘に勝利しました！");
+          System.out.println("");
+          System.out.println("");
+          q += 1;
+          break;
+        }
+        p +=1;
+        if(p == 3){
+          d.talk(2);
+          d.blackcasket(h,heroHp);
+        }
+        default:
+        System.out.println("");
+        System.out.println("");
+        System.out.println("半角数字の1を入力してください！");
+        System.out.println("");
+        System.out.println("");
+          break;
+      }
+    }
+
+    // エンドロール
+    d.talk(3);
+    System.out.println("勇者の冒険は続く");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("作成者：GOD、一緒に勉強した人：KAME,SUKE,感想：オブジェクト思考楽しい");
+    System.out.println("");
+    System.out.println("");
   }
 }
