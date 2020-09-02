@@ -5,7 +5,7 @@ public class Monster extends Character{
 
   // コンストラクト
   public Monster(String name,int hp,int offensivepower){
-    this.name = name;
+    super.name = name;
     this.hp = hp;
     this.offensivepower = offensivepower;
   }
@@ -16,10 +16,15 @@ public class Monster extends Character{
   }
 
   public int attack(Hero h,int heroHp){
-    System.out.println(this.name + "の攻撃！");
-    System.out.println(this.name + "は" + this.offensivepower + "のダメージを与えた！");
-    heroHp -= this.offensivepower;
-    System.out.println(h.name + "の残りのHPは" + heroHp + "です！");
+    if(this.offensivepower < h.defensepower){
+      System.out.println(h.name + "の防御力は" + this.name + "よりも高くダメージはなかった!");
+    }else{
+      int damege = this.offensivepower - h.defensepower;
+      heroHp -= damege;
+      System.out.println(this.name + "の攻撃！");
+      System.out.println(this.name + "は" + damege + "のダメージを与えた！");
+      System.out.println(h.name + "の残りのHPは" + heroHp + "です！");
+    }
     return heroHp;
   }
 }
