@@ -6,9 +6,9 @@ public class Villagehead extends Character{
 
   // メゾット
   public void talk(){
-    System.out.println("ようこそ始まりの村へ");
+    System.out.println("村長「ようこそ始まりの村へ」");
     System.out.println("");
-    System.out.println("ワシはこの村の村長、この村の先は魔王が支配する地域じゃ、準備を終えてから村を出発していくのじゃぞ....");
+    System.out.println("村長「ワシはこの村の村長、この村の先は魔王が支配する地域じゃ、準備を終えてから村を出発していくのじゃぞ....」");
     System.out.println("");
   }
 }

@@ -1,19 +1,23 @@
 public class Devil extends Monster{
   // フィールド
-  private int magic;
+  private int magicPower;
 
   // コンストラクト
   public Devil(){
     super("魔王エリオン",5000,300);
-    this.magic = 500;
+    this.magicPower = 500;
   }
 
   // メゾット
   public int blackcasket(Hero h,int heroHp){
-    System.out.println(this.name + "の波動の90、黒棺！");
-    System.out.println(this.name + "は" + this.magic + "のダメージを与えた！");
-    heroHp -= this.magic;
+    System.out.println("");
+    System.out.println("");
+    System.out.println(this.name + "は呪文を唱えた...波動の九十、黒棺!!!!!");
+    System.out.println(this.name + "は" + this.magicPower + "のダメージを与えた！");
+    heroHp -= this.magicPower;
     System.out.println(h.name + "の残りのHPは" + heroHp + "です！");
+    System.out.println("");
+    System.out.println("");
     return heroHp;
   }
 

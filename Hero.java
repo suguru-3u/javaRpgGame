@@ -89,7 +89,7 @@ public class Hero extends Character{
   public int recovery(int heroHp2){
     int recovery;
     int excessiveRecovery;
-    recovery = heroHp2 / 4;
+    recovery = heroHp2 / 3;
     heroHp2 += recovery;
     if(this.maxhp < heroHp2 ){
       heroHp2 = this.maxhp;
@@ -125,6 +125,28 @@ public class Hero extends Character{
       this.maxhp += 50;
       this.defensepower += 10;
       System.out.println(this.name + "は" + this.level + "にレベルアップしました！");
+  }
+
+  // 敗北
+  public void run(int heroHp){
+    if(heroHp < 0){
+      System.out.println("");
+      System.out.println("");
+      System.out.println("HPは0になりました...");
+      System.out.println("GAME OVER");
+      System.out.println("");
+      System.out.println("");
+      System.exit(0);
+    }
+  }
+
+  // 勝利
+  public void victory(){
+    System.out.println("");
+    System.out.println("");
+    System.out.println("戦闘に勝利しました！");
+    System.out.println("");
+    System.out.println("");
   }
 
 
