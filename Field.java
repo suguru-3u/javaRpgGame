@@ -1,7 +1,7 @@
 public class Field{
 
   // 始まりの村
-  public void villageOfBeginning(Villagehead v,Hero h,Sword sword){
+  public void villageOfBeginning(character.Villagehead v,character.Hero h,item.Sword sword){
     v.talk();
     int t = 0;
     while(t == 0){

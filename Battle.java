@@ -1,7 +1,9 @@
+import character.*;
+
 public class Battle{
 
   // チュートリアル
-    public void tutorial(Hero h,Monster m){
+    public void tutorial(character.Hero h,character.Monster m){
       System.out.println("");
       System.out.println("いきなり魔王軍の部下のガイコツが襲ってきた!!!!!!!");
       System.out.println("");
@@ -26,7 +28,7 @@ public class Battle{
           case 1:
           monsterHp = h.attack(m,monsterHp);
           if(monsterHp <= 0){
-            s += 1;
+            t += 1;
             h.victory();
             break;
           }
@@ -43,7 +45,7 @@ public class Battle{
     }
 
   // モンスターとの戦い
-  public void guardbattle(Hero h,Monster k){
+  public void guardbattle(character.Hero h,character.Monster k){
     int heroHp = h.getHp();
     int monsterHp = k.getHp();
     int t = 0;
@@ -90,7 +92,7 @@ public class Battle{
   }
 
   // 魔王との戦闘
-  piblic void devilbattle(Hero h,Devil d){
+  public void devilbattle(character.Hero h,character.Devil d){
     System.out.println("");
     System.out.println("");
     System.out.println("魔王を偶然、見つけた勇者はついに戦いを挑んだ！果たして勇者は魔王を倒せるのか？");

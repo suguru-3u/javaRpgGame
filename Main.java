@@ -6,18 +6,19 @@
 // 敵と遭遇
 // 魔王
 // エンドロール
-
+import character.*;
+import item.*;
 
 public class Main{
   public static void main(String[] args){
 
     // インスタンス作成
-    Battle battle = new guardbattle();
-    Monster m = new Monster("ガイコツ",20,10);
-    Monster k = new Monster("近衛隊",300,50);
-    Devil d = new Devil();
-    Villagehead v = new Villagehead("村長");
-    Sword sword = new Sword();
+    Battle battle = new Battle();
+    character.Monster m = new character.Monster("ガイコツ",20,10);
+    character.Monster k = new character.Monster("近衛隊",300,50);
+    character.Devil d = new character.Devil();
+    character.Villagehead v = new character.Villagehead("村長");
+    item.Sword sword = new item.Sword();
 
     // 物語
     System.out.println("");
@@ -36,7 +37,7 @@ public class Main{
     System.out.println("あなたの名前を教えていただけませんか?");
     System.out.println("");
     String heroname = new java.util.Scanner(System.in).nextLine();
-    Hero h = new Hero(heroname);
+    character.Hero h = new character.Hero(heroname);
     System.out.println(h.name + "さん、こんにちわ！\nこの世界は魔王に侵略されています。魔王を倒し世界に平和を取り戻しましょう！");
     System.out.println("");
     System.out.println("");
@@ -68,7 +69,7 @@ public class Main{
     System.out.println("");
     System.out.println("");
     Field land = new Field();
-    land.villageOfBeginning(v,h,Sword);
+    land.villageOfBeginning(v,h,sword);
 
     // 近衛隊との戦い
     try {

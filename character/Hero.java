@@ -1,15 +1,17 @@
+package character;
+
 public class Hero extends Character{
 
   // フィールド
   private int hp;
   private int maxhp;
   private int level;
-  int offensivepower;
-  int defensepower;
+  public int offensivepower;
+  public int defensepower;
   private int experiencepoint;
   private int levelUpValue;
-  String sword;
-  int money;
+  public String sword;
+  public int money;
 
   // コンストラクト
   public Hero(String name){
@@ -78,9 +80,16 @@ public class Hero extends Character{
 
   // 攻撃
   public int attack(Monster m,int monsterHp){
-    System.out.println(this.name + "の攻撃！");
-    System.out.println(m.name + "に" + this.offensivepower +"のダメージを与えた！");
-    monsterHp -= this.offensivepower;
+    int satisfaction = new java.until.Random().nextInt(5);
+    if(satisfaction == 3){
+      System.out.println(this.name + "の会心の一撃！");
+      System.out.println(m.name + "に" + (this.offensivepower * 3) +"のダメージを与えた！");
+      monsterHp -= this.offensivepower * 3;
+    }else{
+      System.out.println(this.name + "の攻撃！");
+      System.out.println(m.name + "に" + this.offensivepower +"のダメージを与えた！");
+      monsterHp -= this.offensivepower;
+    }
     System.out.println(m.name + "の残りのHPは" + monsterHp + "です！");
     return monsterHp;
   }
@@ -109,7 +118,7 @@ public class Hero extends Character{
   }
 
   // 装備
-  public void wear(Sword s){
+  public void wear(item.Sword s){
     this.sword = s.name;
     System.out.println(this.name + "は" + s.name + "を入手した！");
     System.out.println("");

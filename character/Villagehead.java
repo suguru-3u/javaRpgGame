@@ -1,3 +1,4 @@
+package character;
 public class Villagehead extends Character{
   // コンストラクト
   public Villagehead(String name){

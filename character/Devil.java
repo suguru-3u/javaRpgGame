@@ -1,3 +1,4 @@
+package character;
 public class Devil extends Monster{
   // フィールド
   private int magicPower;

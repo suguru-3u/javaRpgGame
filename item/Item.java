@@ -1,5 +1,6 @@
+package item;
 public class Item{
   // フィールド
-  String name;
+  public String name;
 
 }

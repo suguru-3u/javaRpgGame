@@ -1,6 +1,9 @@
+package item;
+import character.*;
+
 public class Sword extends Weapon{
   // フィールド
-   int price;
+   public int price;
 
   // コンストラクト
   public Sword(){

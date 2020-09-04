@@ -1,3 +1,5 @@
+package item;
+
 public class Weapon extends Item{
   // フィールド
   int offensiveValue;
