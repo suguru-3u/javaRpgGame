@@ -1,4 +1,5 @@
 package character;
+import item.*;
 
 public class Hero extends Character{
 
@@ -10,7 +11,7 @@ public class Hero extends Character{
   public int defensepower;
   private int experiencepoint;
   private int levelUpValue;
-  public String sword;
+  public item.Weapon[] weapons;
   public int money;
 
   // コンストラクト
@@ -34,6 +35,16 @@ public class Hero extends Character{
   // 所持金セット
   public void setMoney(int money){
     this.money += money;
+  }
+  // 武器のセット
+  public void setWeapon(int type,Weapon weapn){
+    if(type == 1){
+      this.offensivepower += weapn.getOffensiveValue();
+      this.defensepower += weapn.getDefenseValue();
+    }else{
+      this.offensivepower -= weapn.getOffensiveValue();
+      this.defensepower -= weapn.getDefenseValue();
+    }
   }
 
   // getメゾット
@@ -69,9 +80,9 @@ public class Hero extends Character{
   public int getLevelUpValue(){
     return this.levelUpValue;
   }
-  // 装備取得
-  public String getSword(){
-    return this.sword;
+  // 武器一覧取得
+  public item.Weapon[] getWeapons(){
+    return this.weapons;
   }
   // 所持金取得
   public int getMoney(){
@@ -80,7 +91,7 @@ public class Hero extends Character{
 
   // 攻撃
   public int attack(Monster m,int monsterHp){
-    int satisfaction = new java.until.Random().nextInt(5);
+    int satisfaction = new java.util.Random().nextInt(5);
     if(satisfaction == 3){
       System.out.println(this.name + "の会心の一撃！");
       System.out.println(m.name + "に" + (this.offensivepower * 3) +"のダメージを与えた！");
@@ -117,10 +128,12 @@ public class Hero extends Character{
     return heroHp2;
   }
 
-  // 装備
-  public void wear(item.Sword s){
-    this.sword = s.name;
-    System.out.println(this.name + "は" + s.name + "を入手した！");
+  // 武器ゲット
+  public void wear(item.Weapon weapon){
+    int length;
+    length = this.weapons.length;
+    this.weapons[length] = new item.Weapon(length,weapon);
+    System.out.println(this.name + "は" + this.weapons[length - 1] + "を入手した！");
     System.out.println("");
     System.out.println("");
   }
