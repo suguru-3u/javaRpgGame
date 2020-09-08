@@ -129,14 +129,14 @@ public class Hero extends Character{
   }
 
   // 武器ゲット
-  public void wear(item.Weapon weapon){
-    int length;
-    length = this.weapons.length;
-    this.weapons[length] = new item.Weapon(length,weapon);
-    System.out.println(this.name + "は" + this.weapons[length - 1] + "を入手した！");
-    System.out.println("");
-    System.out.println("");
-  }
+  // public void wear(item.Weapon weapon){
+  //   int length;
+  //   length = this.weapons.length;
+  //   this.weapons[length] = new item.Weapon(length,weapon);
+  //   System.out.println(this.name + "は" + this.weapons[length - 1] + "を入手した！");
+  //   System.out.println("");
+  //   System.out.println("");
+  // }
 
   // レベルアップ
   public void levelUp(){
