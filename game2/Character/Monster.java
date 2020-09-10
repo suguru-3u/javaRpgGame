@@ -7,8 +7,28 @@ public abstract class Monster extends Character{
   int defensePower;
 
   // コンストラクト
-  public Hero(String name){
-    super(name);
+  public Monster(String name){
+    super.name = name ;
+  }
+
+  // HPのセット
+  public void setHP(int damegeHp){
+    this.hp = damegeHp;
+  }
+
+  // HPの取得
+  public int getHP(){
+    return this.hp;
+  }
+
+  // 攻撃力の取得
+  public int getOffensivePower(){
+    return this.offensivePower;
+  }
+
+  // 防御力取得
+  public int getDefensePower(){
+    return this.defensePower;
   }
 
   // 攻撃
