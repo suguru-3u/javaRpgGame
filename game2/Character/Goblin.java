@@ -1,15 +1,43 @@
 package character;
 
 public class Goblin extends Monster{
+  // フィールド
+  int identificationNumber;
+  boolean survival;
+
   // コンストラクト
-  public Goblin(){
-    super("ゴブリン");
+  public Goblin(String name,int identificationNumber){
+    super(name);
     super.hp = 10;
     super.offensivePower = 15;
     super.defensePower = 5;
+    this.identificationNumber = identificationNumber;
+    this.survival = true;
   }
 
   // メソッド
+  // 生存判定セット
+  public void setSurvival(){
+    this.survival = false;
+  }
+
+  // 名前取得
+  public String getName(){
+    return super.name;
+  }
+  // HPゲット
+  public int getHP(){
+    return super.hp;
+  }
+  // 識別番号ゲット
+  public int getIdentificationNumber(){
+    return this.identificationNumber;
+  }
+  // 生存判定ゲット
+  public boolean getSurvival(){
+    return this.survival;
+  }
+
 
   // 攻撃
   public void attack(Hero h){

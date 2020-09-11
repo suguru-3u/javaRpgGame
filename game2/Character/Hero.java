@@ -5,6 +5,10 @@ public class Hero extends Character{
   int hp;
   int offensivePower;
   int defensePower;
+  int experiencePoint;
+  int level;
+  int levelUpValue;
+  int money;
 
   // コンストラクト
   public Hero(){
@@ -12,6 +16,10 @@ public class Hero extends Character{
     this.hp = 100;
     this.offensivePower = 20;
     this.defensePower = 10;
+    this.experiencePoint = 0;
+    this.level = 0;
+    this.levelUpValue = 30;
+    this.money = 100;
   }
 
   // メソッド
@@ -19,6 +27,20 @@ public class Hero extends Character{
   public void setHp(int damegeHp){
     this.hp = damegeHp;
   }
+  // 経験値セット
+  public void setExperiencePoint(int experiencePoint){
+    this.experiencePoint += experiencePoint;
+  }
+  // お金セット
+  public void setMoney(int setmoney){
+    this.money += setmoney;
+  }
+
+  // レベルゲット
+  public int getLevel(){
+    return this.level;
+  }
+
   // HPゲット
   public int getHP(){
     return this.hp;
@@ -26,6 +48,18 @@ public class Hero extends Character{
   // 防御力ゲット
   public int getDefensePower(){
     return this.defensePower;
+  }
+  // 経験値ゲット
+  public int getExperiencePoint(){
+    return this.experiencePoint;
+  }
+  // レベルアップ値ゲット
+  public int getLevelUpValue(){
+    return this.levelUpValue;
+  }
+  // お金ゲット
+  public int getMoney(){
+    return this.money;
   }
 
   // 攻撃
@@ -52,6 +86,16 @@ public class Hero extends Character{
       System.out.println("");
       System.out.println("");
     }
+  }
+
+  // レベルアップ
+  public void levelup(){
+    this.hp += 50;
+    this.offensivePower += 20;
+    this.defensePower += 10;
+    this.level += 1;
+    this.levelUpValue *= 1.5;
+    System.out.println(super.name + "は" + this.level + "にレベルアップしました！");
   }
 
 }

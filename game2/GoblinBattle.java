@@ -2,7 +2,10 @@ import character.*;
 
 public class GoblinBattle extends Battle{
   // メソッド
-  public void monsterBattle(){
+  public int monsterBattle(Hero h){
+    // 勝利判定の変数
+    int game = 0;
+
     System.out.println("");
     System.out.println("");
     System.out.println("ゴブリン討伐クエスト開始！！！");
@@ -12,13 +15,12 @@ public class GoblinBattle extends Battle{
     System.out.println("ゴブリンとの戦闘開始");
     System.out.println("");
     System.out.println("");
-    Hero h = new Hero();
-    Goblin g = new Goblin();
+    Goblin g = new Goblin("ゴブリン",0);
     int count = 0;
     while(count == 0){
       System.out.println("");
       System.out.println("");
-      System.out.println("勇者のHP: " + h.getHP());
+      System.out.println("勇者のレベル: " + h.getLevel() + " 勇者のHP: " + h.getHP() + " 経験値: " + h.getExperiencePoint());
       System.out.println("ゴブリンのHP: " + g.getHP());
       System.out.println("");
       System.out.println("");
@@ -38,15 +40,27 @@ public class GoblinBattle extends Battle{
             count = 1;
           }
           if(g.getHP() <= 0){
+            int experiencePoint = 10;
+            int money = 10;
             System.out.println("");
             System.out.println("");
-            System.out.println("勝ちました！！！！！");
+            System.out.println("ゴブリンに勝ちました！！！！！");
             System.out.println("");
             System.out.println("");
+            System.out.println("経験値を" + experiencePoint + "ゲットした！");
+            System.out.println("");
+            System.out.println("");
+            h.setExperiencePoint(experiencePoint);
+            h.setMoney(money);
+            if(h.getExperiencePoint() >= h.getLevelUpValue()){
+              h.levelup();
+            }
+            game = 1;
             count = 1;
           }
         break;
       }
     }
+    return game;
   }
 }

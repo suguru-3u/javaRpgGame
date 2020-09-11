@@ -1,6 +1,6 @@
+import character.*;
+
 public abstract class Battle{
 
-  // メソッド
-  public void monsterBattle(){
-  }
+  public abstract int monsterBattle(Hero h);
 }
