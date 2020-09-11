@@ -1,6 +1,9 @@
-package character;
+// package character;
+//
+// import item.*;
 
 public class Hero extends Character{
+
   // フィールド
   int hp;
   int offensivePower;
@@ -9,6 +12,8 @@ public class Hero extends Character{
   int level;
   int levelUpValue;
   int money;
+  Sword sword;
+  boolean wearsword;
 
   // コンストラクト
   public Hero(){
@@ -20,6 +25,7 @@ public class Hero extends Character{
     this.level = 0;
     this.levelUpValue = 30;
     this.money = 100;
+    this.wearsword = false;
   }
 
   // メソッド
@@ -27,10 +33,12 @@ public class Hero extends Character{
   public void setHp(int damegeHp){
     this.hp = damegeHp;
   }
+
   // 経験値セット
   public void setExperiencePoint(int experiencePoint){
     this.experiencePoint += experiencePoint;
   }
+
   // お金セット
   public void setMoney(int setmoney){
     this.money += setmoney;
@@ -45,18 +53,22 @@ public class Hero extends Character{
   public int getHP(){
     return this.hp;
   }
+
   // 防御力ゲット
   public int getDefensePower(){
     return this.defensePower;
   }
+
   // 経験値ゲット
   public int getExperiencePoint(){
     return this.experiencePoint;
   }
+
   // レベルアップ値ゲット
   public int getLevelUpValue(){
     return this.levelUpValue;
   }
+
   // お金ゲット
   public int getMoney(){
     return this.money;
@@ -96,6 +108,31 @@ public class Hero extends Character{
     this.level += 1;
     this.levelUpValue *= 1.5;
     System.out.println(super.name + "は" + this.level + "にレベルアップしました！");
+  }
+
+
+  // 剣を身に着ける
+  public void swordwear(Sword w){
+    if(this.wearsword){
+      System.out.println("");
+      System.out.println("既に" + this.sword.getName() + "を装備してます~~~~");
+      System.out.println("");
+      System.out.println("アイテムを変更する場合は、１を入力してください。装備しない場合は１意外を入力してください。");
+      System.out.println("");
+      int select = new java.util.Scanner(System.in).nextInt();
+      if(select == 1){
+        this.sword = w;
+        System.out.println("");
+        System.out.println(w.getName() + "を装備します$$$$$");
+        System.out.println("");
+      }
+    }else{
+      this.sword = w;
+      this.wearsword = true;
+      System.out.println("");
+      System.out.println(w.getName() + "を装備します！!!!!");
+      System.out.println("");
+    }
   }
 
 }

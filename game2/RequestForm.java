@@ -1,4 +1,6 @@
-import character.*;
+// package facility;
+// import character.*;
+// import Battle.*;
 
 public class RequestForm{
 
