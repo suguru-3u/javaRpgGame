@@ -78,24 +78,30 @@ public class Hero extends Character{
   public void attack(Monster m){
     if(m.getDefensePower() >= this.offensivePower){
       System.out.println("");
-      System.out.println("");
       System.out.println("敵の防御力が勇者の攻撃力を上回っていた!!!!!");
       System.out.println("");
       System.out.println("敵が受けたダメージは0だ..勇者はショックを受けた..");
       System.out.println("");
-      System.out.println("");
     }else{
-      int damege = this.offensivePower - m.getDefensePower();
+      int random = new java.util.Random().nextInt(5);
+      int damege;
+      int damegeHp;
+      if(random == 3){
+        damege = (this.offensivePower * 3) - m.getDefensePower();
+        System.out.println("");
+        System.out.println(this.name + "は敵に会心の一撃を与えた！！！");
+        System.out.println("");
+      }else{
+        damege = this.offensivePower - m.getDefensePower();
+        System.out.println("");
+        System.out.println(this.name + "は敵に攻撃した！！！");
+        System.out.println("");
+      }
       System.out.println(damege);
-      int damegeHp = (m.getHP() - damege);
+      damegeHp = (m.getHP() - damege);
       System.out.println(damegeHp);
       m.setHP(damegeHp);
-      System.out.println("");
-      System.out.println("");
-      System.out.println(this.name + "は敵に攻撃した！！！");
-      System.out.println("");
       System.out.println("敵に" + damegeHp + "のダメージを与えた!!!!");
-      System.out.println("");
       System.out.println("");
     }
   }

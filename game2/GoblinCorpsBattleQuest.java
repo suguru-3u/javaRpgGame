@@ -17,16 +17,14 @@ public class GoblinCorpsBattleQuest extends Battle{
     System.out.println("");
     System.out.println("ゴブリン討伐クエスト開始！！！");
     System.out.println("");
-    System.out.println("");
     System.out.println("ゴブリン達が現れた！！！");
     System.out.println("ゴブリン達との戦闘開始");
-    System.out.println("");
     System.out.println("");
     int count = 0;
     while(count == 0){
       System.out.println("");
-      System.out.println("");
       System.out.println("勇者のレベル: " + h.getLevel() + " 勇者のHP: " + h.getHP() + " 経験値: " + h.getExperiencePoint());
+      System.out.println("");
       for(Goblin goblins : g){
         if(goblins.getHP() >= 0){
           System.out.println(goblins.getName() + "のHP: " + goblins.getHP());
@@ -51,9 +49,7 @@ public class GoblinCorpsBattleQuest extends Battle{
           }
           if(h.getHP() <= 0){
             System.out.println("");
-            System.out.println("");
             System.out.println("負けました.....");
-            System.out.println("");
             System.out.println("");
             count = 1;
           }
@@ -76,7 +72,6 @@ public class GoblinCorpsBattleQuest extends Battle{
                 System.out.println("");
                 System.out.println("");
                 System.out.println("ゴブリン軍団に勝ちました！！！！！");
-                System.out.println("");
                 System.out.println("");
                 System.out.println("経験値を" + experiencePoint + "ゲットした！");
                 System.out.println("");
