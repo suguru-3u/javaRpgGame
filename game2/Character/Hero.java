@@ -1,6 +1,6 @@
-// package character;
-//
-// import item.*;
+package character;
+
+import item.*;
 
 public class Hero extends Character{
 
@@ -121,7 +121,7 @@ public class Hero extends Character{
   public void swordwear(Sword w){
     if(this.wearsword){
       System.out.println("");
-      System.out.println("既に" + this.sword.getName() + "を装備してます~~~~");
+      System.out.println("既に" + this.sword.getName() + "を装備しています。");
       System.out.println("");
       System.out.println("アイテムを変更する場合は、１を入力してください。装備しない場合は１意外を入力してください。");
       System.out.println("");
@@ -129,14 +129,14 @@ public class Hero extends Character{
       if(select == 1){
         this.sword = w;
         System.out.println("");
-        System.out.println(w.getName() + "を装備します$$$$$");
+        System.out.println(w.getName() + "を新たに装備します。");
         System.out.println("");
       }
     }else{
       this.sword = w;
       this.wearsword = true;
       System.out.println("");
-      System.out.println(w.getName() + "を装備します！!!!!");
+      System.out.println(w.getName() + "を装備します!!!");
       System.out.println("");
     }
   }

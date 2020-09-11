@@ -1,4 +1,4 @@
-// package item;
+package item;
 
 public class Sword extends Weapon{
   // コンストラクト

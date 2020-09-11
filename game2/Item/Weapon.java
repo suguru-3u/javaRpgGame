@@ -1,4 +1,4 @@
-// package item;
+package item;
 
 public abstract class Weapon extends Item{
   // フィールド

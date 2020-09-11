@@ -1,5 +1,5 @@
-// package battle;
-// import character.*;
+package battle;
+import character.*;
 
 public abstract class Battle{
 

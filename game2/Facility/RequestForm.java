@@ -1,6 +1,6 @@
-// package facility;
-// import character.*;
-// import Battle.*;
+package facility;
+import character.*;
+import battle.*;
 
 public class RequestForm{
 
@@ -42,7 +42,7 @@ public class RequestForm{
               Thread.sleep(1000);
             } catch (InterruptedException e) {
             }
-            GoblinBattle goblin = new GoblinBattle();
+            battle.GoblinBattle goblin = new battle.GoblinBattle();
             int game = goblin.monsterBattle(h);
             if(game == 1){
               System.out.println("クエストに成功しました！");
@@ -68,7 +68,7 @@ public class RequestForm{
             Thread.sleep(1000);
           } catch (InterruptedException e) {
           }
-          GoblinCorpsBattleQuest goblins = new GoblinCorpsBattleQuest();
+          battle.GoblinCorpsBattleQuest goblins = new battle.GoblinCorpsBattleQuest();
           int game = goblins.monsterBattle(h);
           if(game == 1){
             System.out.println("クエストに成功しました！");

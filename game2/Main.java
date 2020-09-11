@@ -1,17 +1,13 @@
-// import character.*;
-// import item.*;
-// import Facility.*;
-// import Battle.*;
+import character.*;
+import item.*;
+import Facility.*;
+import Battle.*;
 
 public class Main{
   public static void main(String[] args){
-
-    Sword s = new Sword("普通の剣",100,20,10);
-    Sword j = new Sword("悪魔の剣",10000,200000000,100000);
+    // 勇者召喚
     Hero h = new Hero();
-    h.swordwear(s);
-    h.swordwear(j);
-
+    // 冒険のループ変数
     int count = 0;
 
     System.out.println("");
@@ -33,7 +29,7 @@ public class Main{
             Thread.sleep(1000);
           } catch (InterruptedException e) {
           }
-          RequestForm r = new RequestForm();
+          facility.RequestForm r = new facility.RequestForm();
           r.requestForm(h);
         break;
         case 2:
@@ -44,7 +40,7 @@ public class Main{
             Thread.sleep(1000);
           } catch (InterruptedException e) {
           }
-          RequestForm d = new RequestForm();
+          facility.RequestForm d = new facility.RequestForm();
           d.requestForm(h);
         break;
         case 5:
