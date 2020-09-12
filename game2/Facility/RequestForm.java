@@ -2,7 +2,11 @@ package facility;
 import character.*;
 import battle.*;
 
-public class RequestForm{
+public class RequestForm extends Facility{
+  // コンストラクト
+  public RequestForm(){
+    super.name = "集会所";
+  }
 
   // メソッド
   public void requestForm(Hero h){
@@ -10,14 +14,14 @@ public class RequestForm{
 
     System.out.println("");
     System.out.println("");
-    System.out.println("ようこそ,集会所へ");
+    System.out.println("ようこそ," + super.name);
     System.out.println("");
     System.out.println("");
     while(count == 0){
       System.out.println("現在ご紹介できるクエストはこちらです。");
       System.out.println("");
-      System.out.println("No1:ゴブリン討伐");
       System.out.println("");
+      System.out.println("No1:ゴブリン討伐");
       System.out.println("");
       System.out.println("No2:ゴブリン軍団討伐");
       System.out.println("");
@@ -81,9 +85,7 @@ public class RequestForm{
         break;
         case 10:
           System.out.println("");
-          System.out.println("");
           System.out.println("村に戻ります！");
-          System.out.println("");
           System.out.println("");
           count += 1;
         break;

@@ -18,7 +18,7 @@ public class Main{
     System.out.println("");
     while(count == 0){
       System.out.println("行動したいステータスを入力してください！");
-      System.out.println("1,クエストの集会所に行く、2武器屋に行く、3商店に行く,4ステータスの確認、5:ゲームをやめる");
+      System.out.println("1,クエストの集会所に行く、2武器屋に行く、3教会に行く,4ステータスの確認、5:ゲームをやめる");
       int select = new java.util.Scanner(System.in).nextInt();
       switch(select){
         case 1:
@@ -40,8 +40,19 @@ public class Main{
             Thread.sleep(1000);
           } catch (InterruptedException e) {
           }
-          facility.RequestForm d = new facility.RequestForm();
-          d.requestForm(h);
+          facility.WeaponShop d = new facility.WeaponShop();
+          d.weaponShopping(h);
+        break;
+        case 3:
+          System.out.println("");
+          System.out.println("教会に行く!!!");
+          System.out.println("");
+          try {
+            Thread.sleep(1000);
+          } catch (InterruptedException e) {
+          }
+          facility.Church c = new facility.Church();
+          c.hpRecovery(h);
         break;
         case 5:
           System.out.println("");

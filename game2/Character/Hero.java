@@ -6,6 +6,7 @@ public class Hero extends Character{
 
   // フィールド
   int hp;
+  int maxhp;
   int offensivePower;
   int defensePower;
   int experiencePoint;
@@ -19,6 +20,7 @@ public class Hero extends Character{
   public Hero(){
     super.name = "佐藤";
     this.hp = 100;
+    this.maxhp = 100;
     this.offensivePower = 20;
     this.defensePower = 10;
     this.experiencePoint = 0;
@@ -54,6 +56,11 @@ public class Hero extends Character{
     return this.hp;
   }
 
+  // 最大HPゲット
+  public int getMaxHP(){
+    return this.maxhp;
+  }
+
   // 防御力ゲット
   public int getDefensePower(){
     return this.defensePower;
@@ -72,6 +79,11 @@ public class Hero extends Character{
   // お金ゲット
   public int getMoney(){
     return this.money;
+  }
+
+  // 武器ゲット
+  public Sword getSword(){
+      return this.sword;
   }
 
   // 攻撃
@@ -109,6 +121,7 @@ public class Hero extends Character{
   // レベルアップ
   public void levelup(){
     this.hp += 50;
+    this.maxhp += 50;
     this.offensivePower += 20;
     this.defensePower += 10;
     this.level += 1;
@@ -123,20 +136,47 @@ public class Hero extends Character{
       System.out.println("");
       System.out.println("既に" + this.sword.getName() + "を装備しています。");
       System.out.println("");
-      System.out.println("アイテムを変更する場合は、１を入力してください。装備しない場合は１意外を入力してください。");
+      System.out.println("武器を変更する場合は、１を入力してください。装備しない場合は１意外を入力してください。");
       System.out.println("");
       int select = new java.util.Scanner(System.in).nextInt();
       if(select == 1){
+        this.offensivePower -= this.sword.getOffensivePower();
+        this.defensePower -= this.sword.getDefensePower();
         this.sword = w;
         System.out.println("");
         System.out.println(w.getName() + "を新たに装備します。");
+        System.out.println("");
+        this.money -= w.getPrice();
+        this.offensivePower += w.getOffensivePower();
+        this.defensePower += w.getDefensePower();
+        System.out.println(super.name + "の攻撃力は" + this.offensivePower
+         + " 防御力は" + this.defensePower + "に変化した！");
         System.out.println("");
       }
     }else{
       this.sword = w;
       this.wearsword = true;
       System.out.println("");
-      System.out.println(w.getName() + "を装備します!!!");
+      System.out.println(w.getName() + "を装備しました!!!");
+      System.out.println("");
+      this.money -= w.getPrice();
+      this.offensivePower += w.getOffensivePower();
+      this.defensePower += w.getDefensePower();
+      System.out.println(super.name + "の攻撃力は" + this.offensivePower
+       + " 防御力は" + this.defensePower + "に変化した！");
+      System.out.println("");
+    }
+  }
+
+  // HP回復
+  public void hpMoneyRecovery(int h){
+    this.hp += h;
+    if(this.maxhp < this.hp){
+      this.hp = this.maxhp;
+      System.out.println("HPは完全回復しました！");
+      System.out.println("");
+    }else{
+      System.out.println("HPは回復しました！");
       System.out.println("");
     }
   }

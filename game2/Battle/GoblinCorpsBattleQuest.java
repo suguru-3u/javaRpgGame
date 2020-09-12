@@ -22,7 +22,7 @@ public class GoblinCorpsBattleQuest extends Battle{
     System.out.println("");
     int count = 0;
     while(count == 0){
-      System.out.println("");
+      System.out.println("================================================");
       System.out.println("勇者のレベル: " + h.getLevel() + " 勇者のHP: " + h.getHP() + " 経験値: " + h.getExperiencePoint());
       System.out.println("");
       for(Goblin goblins : g){
@@ -30,6 +30,7 @@ public class GoblinCorpsBattleQuest extends Battle{
           System.out.println(goblins.getName() + "のHP: " + goblins.getHP());
         }
       }
+      System.out.println("================================================");
       System.out.println("");
       System.out.println("戦闘コマンドを選択してください");
       System.out.println("1:闘う");
@@ -69,7 +70,6 @@ public class GoblinCorpsBattleQuest extends Battle{
               if(monsterSurvivalCount == 3){
                 int experiencePoint = 30;
                 int money = 30;
-                System.out.println("");
                 System.out.println("");
                 System.out.println("ゴブリン軍団に勝ちました！！！！！");
                 System.out.println("");

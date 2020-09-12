@@ -20,10 +20,10 @@ public class GoblinBattle extends Battle{
     int count = 0;
     while(count == 0){
       System.out.println("");
-      System.out.println("");
+      System.out.println("================================================");
       System.out.println("勇者のレベル: " + h.getLevel() + " 勇者のHP: " + h.getHP() + " 経験値: " + h.getExperiencePoint());
       System.out.println("ゴブリンのHP: " + g.getHP());
-      System.out.println("");
+      System.out.println("================================================");
       System.out.println("");
       System.out.println("戦闘コマンドを選択してください");
       System.out.println("1:闘う");
