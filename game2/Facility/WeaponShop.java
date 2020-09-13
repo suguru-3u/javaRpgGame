@@ -22,7 +22,7 @@ public class WeaponShop extends Facility{
     System.out.println("");
     while(count == 0){
       System.out.println("================================================");
-      System.out.println("現在の所持金： " + h.getMoney() + "G" + " 装備している武器： " + h.getSword() );
+      System.out.println("現在の所持金： " + h.getMoney() + "G" + " 装備している武器： " + (h.getSword()).getName() );
       System.out.println("================================================");
       System.out.println("");
       System.out.println("購入したい武器があれば番号を入力してくれ！。村に戻る場合は10を入力してくれ！");
@@ -30,7 +30,7 @@ public class WeaponShop extends Facility{
       System.out.println("１： " + s.getName() + " 価格： " + s.getPrice()
        + " 攻撃力： " + s.getOffensivePower() + " 防御力 " + s.getDefensePower());
       System.out.println("");
-      System.out.println("１： " + k.getName() + " 価格： " + k.getPrice()
+      System.out.println("２： " + k.getName() + " 価格： " + k.getPrice()
        + " 攻撃力： " + k.getOffensivePower() + " 防御力 " + k.getDefensePower());
       System.out.println("");
       int selectWeapon = new java.util.Scanner(System.in).nextInt();
@@ -72,10 +72,15 @@ public class WeaponShop extends Facility{
           }
         break;
         case 10:
-        System.out.println("");
-        System.out.println("村に戻ります！");
-        System.out.println("");
-        count += 1;
+          System.out.println("");
+          System.out.println("村に戻ります！");
+          System.out.println("");
+          count += 1;
+        break;
+        default:
+          System.out.println("");
+          System.out.println("正しい番号を入力してください！");
+          System.out.println("");
         break;
       }
     }

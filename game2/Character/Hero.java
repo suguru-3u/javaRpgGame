@@ -17,8 +17,8 @@ public class Hero extends Character{
   boolean wearsword;
 
   // コンストラクト
-  public Hero(){
-    super.name = "佐藤";
+  public Hero(String name,Sword sword){
+    super.name = name;
     this.hp = 100;
     this.maxhp = 100;
     this.offensivePower = 20;
@@ -28,6 +28,7 @@ public class Hero extends Character{
     this.levelUpValue = 30;
     this.money = 100;
     this.wearsword = false;
+    this.sword = sword;
   }
 
   // メソッド
@@ -59,6 +60,11 @@ public class Hero extends Character{
   // 最大HPゲット
   public int getMaxHP(){
     return this.maxhp;
+  }
+
+  // 攻撃力ゲット
+  public int getOffensivePower(){
+    return this.offensivePower;
   }
 
   // 防御力ゲット

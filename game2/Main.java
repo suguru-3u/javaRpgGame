@@ -6,7 +6,8 @@ import Battle.*;
 public class Main{
   public static void main(String[] args){
     // 勇者召喚
-    Hero h = new Hero();
+    item.Sword b = new item.Sword("錆びたの剣",0,0,0);
+    Hero h = new Hero("あやか",b);
     // 冒険のループ変数
     int count = 0;
 
@@ -54,11 +55,27 @@ public class Main{
           facility.Church c = new facility.Church();
           c.hpRecovery(h);
         break;
+        case 4:
+          System.out.println("現在のステータスを表示します");
+          System.out.println("");
+          System.out.println("================================================================================================================================================");
+          System.out.println("レベル： " + h.getLevel() + "  現在のHP： " + h.getHP() + "  最大HP： " + h.getMaxHP()
+          + "  攻撃力： " + h.getOffensivePower() + "  防御力： " + h.getDefensePower() + "  現在の経験値： " + h.getExperiencePoint()
+          + "  レベルアップ経験値： " + h.getLevelUpValue() + "  所持金： " + h.getMoney() + "  装備武器： "
+          + (h.getSword()).getName());
+          System.out.println("================================================================================================================================================");
+          System.out.println("");
+        break;
         case 5:
           System.out.println("");
           System.out.println("");
           System.out.println("ゲームをやめます");
           System.exit(0);
+        break;
+        default:
+          System.out.println("");
+          System.out.println("正しい番号を入力してください！");
+          System.out.println("");
         break;
       }
     }

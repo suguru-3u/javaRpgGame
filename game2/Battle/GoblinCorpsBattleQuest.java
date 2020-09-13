@@ -88,6 +88,11 @@ public class GoblinCorpsBattleQuest extends Battle{
           }
           monsterSurvivalCount = 0;
         break;
+        default:
+          System.out.println("");
+          System.out.println("正しい番号を入力してください！");
+          System.out.println("");
+        break;
       }
     }
     return game;

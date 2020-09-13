@@ -60,6 +60,11 @@ public class GoblinBattle extends Battle{
             count = 1;
           }
         break;
+        default:
+          System.out.println("");
+          System.out.println("正しい番号を入力してください！");
+          System.out.println("");
+        break;
       }
     }
     return game;
