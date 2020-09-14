@@ -9,6 +9,9 @@ public abstract class Character{
 
   // Set name
   public void setName(String name){
+    if(name == null){
+      throw new IllegalArgumentException("名前を入力してください！");
+    }
     this.name = name;
   }
 
