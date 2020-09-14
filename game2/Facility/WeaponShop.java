@@ -5,7 +5,7 @@ import battle.*;
 public class WeaponShop extends Facility{
   // コンストラクト
   public WeaponShop(){
-    super.name = "武器屋";
+    setName("武器屋");
   }
 
   // メソッド
@@ -18,7 +18,7 @@ public class WeaponShop extends Facility{
     item.Sword k = new item.Sword("高級の剣",300,60,30);
 
     System.out.println("");
-    System.out.println("ようこそ" + this.name + "へ!!!");
+    System.out.println("ようこそ" + getName() + "へ!!!");
     System.out.println("");
     while(count == 0){
       System.out.println("================================================");

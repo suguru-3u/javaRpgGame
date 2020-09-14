@@ -5,20 +5,20 @@ import item.*;
 public class Hero extends Character{
 
   // フィールド
-  int hp;
-  int maxhp;
-  int offensivePower;
-  int defensePower;
-  int experiencePoint;
-  int level;
-  int levelUpValue;
-  int money;
-  Sword sword;
-  boolean wearsword;
+  private int hp;
+  private int maxhp;
+  private int offensivePower;
+  private int defensePower;
+  private int experiencePoint;
+  private int level;
+  private int levelUpValue;
+  private int money;
+  private Sword sword;
+  private boolean wearsword;
 
   // コンストラクト
   public Hero(String name,Sword sword){
-    super.name = name;
+    setName(name);
     this.hp = 100;
     this.maxhp = 100;
     this.offensivePower = 20;
@@ -107,12 +107,12 @@ public class Hero extends Character{
       if(random == 3){
         damege = (this.offensivePower * 3) - m.getDefensePower();
         System.out.println("");
-        System.out.println(this.name + "は敵に会心の一撃を与えた！！！");
+        System.out.println(getName() + "は敵に会心の一撃を与えた！！！");
         System.out.println("");
       }else{
         damege = this.offensivePower - m.getDefensePower();
         System.out.println("");
-        System.out.println(this.name + "は敵に攻撃した！！！");
+        System.out.println(getName() + "は敵に攻撃した！！！");
         System.out.println("");
       }
       System.out.println(damege);
@@ -132,7 +132,7 @@ public class Hero extends Character{
     this.defensePower += 10;
     this.level += 1;
     this.levelUpValue *= 1.5;
-    System.out.println(super.name + "は" + this.level + "にレベルアップしました！");
+    System.out.println(getName() + "は" + this.level + "にレベルアップしました！");
   }
 
 
@@ -155,7 +155,7 @@ public class Hero extends Character{
         this.money -= w.getPrice();
         this.offensivePower += w.getOffensivePower();
         this.defensePower += w.getDefensePower();
-        System.out.println(super.name + "の攻撃力は" + this.offensivePower
+        System.out.println(getName() + "の攻撃力は" + this.offensivePower
          + " 防御力は" + this.defensePower + "に変化した！");
         System.out.println("");
       }
@@ -168,7 +168,7 @@ public class Hero extends Character{
       this.money -= w.getPrice();
       this.offensivePower += w.getOffensivePower();
       this.defensePower += w.getDefensePower();
-      System.out.println(super.name + "の攻撃力は" + this.offensivePower
+      System.out.println(getName() + "の攻撃力は" + this.offensivePower
        + " 防御力は" + this.defensePower + "に変化した！");
       System.out.println("");
     }

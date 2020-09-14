@@ -2,15 +2,12 @@ package character;
 
 public class Goblin extends Monster{
   // フィールド
-  int identificationNumber;
-  boolean survival;
+  private int identificationNumber;
+  private boolean survival;
 
   // コンストラクト
   public Goblin(String name,int identificationNumber){
-    super(name);
-    super.hp = 10;
-    super.offensivePower = 15;
-    super.defensePower = 5;
+    super(name,10,15,5);
     this.identificationNumber = identificationNumber;
     this.survival = true;
   }
@@ -21,14 +18,15 @@ public class Goblin extends Monster{
     this.survival = false;
   }
 
-  // 名前取得
-  public String getName(){
-    return super.name;
-  }
-  // HPゲット
-  public int getHP(){
-    return super.hp;
-  }
+  // // 名前取得
+  // public String getName(){
+  //   return super.name;
+  // }
+  // // HPゲット
+  // public int getHP(){
+  //   return super.hp;
+  // }
+
   // 識別番号ゲット
   public int getIdentificationNumber(){
     return this.identificationNumber;
@@ -41,7 +39,7 @@ public class Goblin extends Monster{
 
   // 攻撃
   public void attack(Hero h){
-    if(h.getDefensePower() >= super.offensivePower){
+    if(h.getDefensePower() >= getOffensivePower()){
       System.out.println("");
       System.out.println("");
       System.out.println("勇者の防御力がゴブリンの攻撃力を上回っていた!!!!!");
@@ -56,7 +54,7 @@ public class Goblin extends Monster{
       h.setHp(damegeHp);
       System.out.println("");
       System.out.println("");
-      System.out.println(super.name + "は勇者に攻撃した！！！");
+      System.out.println(getName() + "は勇者に攻撃した！！！");
       System.out.println("");
       System.out.println("勇者に" + damege + "のダメージを受けた!!!!");
       System.out.println("");

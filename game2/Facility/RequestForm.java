@@ -12,7 +12,7 @@ public class RequestForm extends Facility{
 
   // コンストラクト
   public RequestForm(){
-    super.name = "集会所";
+    setName("集会所");
     this.quest1 = "No1:ゴブリン討伐";
     this.quest2 = "No2:ゴブリン軍団討伐";
     this.quest3 = "No3:スケルトン軍団討伐";
@@ -26,7 +26,7 @@ public class RequestForm extends Facility{
 
     System.out.println("");
     System.out.println("");
-    System.out.println("ようこそ," + super.name);
+    System.out.println("ようこそ," + getName());
     System.out.println("");
     System.out.println("こちらではレベルにあったクエストをご紹介しています。\nレベルが上がればクエストが出現するかもしれませんよ...");
     while(count == 0){

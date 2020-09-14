@@ -2,13 +2,16 @@ package character;
 
 public abstract class Monster extends Character{
   // フィールド
-  int hp;
-  int offensivePower;
-  int defensePower;
+  private int hp;
+  private int offensivePower;
+  private int defensePower;
 
   // コンストラクト
-  public Monster(String name){
-    super.name = name ;
+  public Monster(String name,int hp,int offensivePower,int defensePower){
+    setName(name) ;
+    this.hp = hp;
+    this.offensivePower = offensivePower;
+    this.defensePower = defensePower;
   }
 
   // HPのセット
