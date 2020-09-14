@@ -33,12 +33,19 @@ public class WeaponShop extends Facility{
       System.out.println("２： " + k.getName() + " 価格： " + k.getPrice()
        + " 攻撃力： " + k.getOffensivePower() + " 防御力 " + k.getDefensePower());
       System.out.println("");
-      int selectWeapon = new java.util.Scanner(System.in).nextInt();
-      switch(selectWeapon){
-        case 1:
+      int selectWeapon = 0;
+      try{
+        selectWeapon = new java.util.Scanner(System.in).nextInt();
+      }catch(Exception e){
+        System.out.println("");
+        System.out.println(e);
+        System.out.println("");
+      }finally{
+        switch(selectWeapon){
+          case 1:
           System.out.println("");
           System.out.println("１： " + s.getName() + " 価格： " + s.getPrice()
-           + " 攻撃力： " + s.getOffensivePower() + " 防御力 " + s.getDefensePower() + "を購入します。よろしいですか？");
+          + " 攻撃力： " + s.getOffensivePower() + " 防御力 " + s.getDefensePower() + "を購入します。よろしいですか？");
           System.out.println("");
           System.out.println("よろしければ１を入力してください！買わない場合は１意外を入力してください！");
           System.out.println("");
@@ -52,11 +59,11 @@ public class WeaponShop extends Facility{
             h.swordwear(s);
             System.out.println("");
           }
-        break;
-        case 2:
+          break;
+          case 2:
           System.out.println("");
           System.out.println("１： " + k.getName() + " 価格： " + k.getPrice()
-           + " 攻撃力： " + k.getOffensivePower() + " 防御力 " + k.getDefensePower() + "を購入します。よろしいですか？");
+          + " 攻撃力： " + k.getOffensivePower() + " 防御力 " + k.getDefensePower() + "を購入します。よろしいですか？");
           System.out.println("");
           System.out.println("よろしければ１を入力してください！買わない場合は１意外を入力してください！");
           System.out.println("");
@@ -70,18 +77,19 @@ public class WeaponShop extends Facility{
             h.swordwear(k);
             System.out.println("");
           }
-        break;
-        case 10:
+          break;
+          case 10:
           System.out.println("");
           System.out.println("村に戻ります！");
           System.out.println("");
           count += 1;
-        break;
-        default:
+          break;
+          default:
           System.out.println("");
           System.out.println("正しい番号を入力してください！");
           System.out.println("");
-        break;
+          break;
+        }
       }
     }
   }

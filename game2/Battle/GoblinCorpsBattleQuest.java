@@ -14,7 +14,6 @@ public class GoblinCorpsBattleQuest extends Battle{
     g[2] = new Goblin("ゴブリン:2",2);
 
     System.out.println("");
-    System.out.println("");
     System.out.println("ゴブリン討伐クエスト開始！！！");
     System.out.println("");
     System.out.println("ゴブリン達が現れた！！！");
@@ -35,9 +34,16 @@ public class GoblinCorpsBattleQuest extends Battle{
       System.out.println("戦闘コマンドを選択してください");
       System.out.println("1:闘う");
       System.out.println("");
-      int select = new java.util.Scanner(System.in).nextInt();
-      switch(select){
-        case 1:
+      int select = 0;
+      try{
+        select = new java.util.Scanner(System.in).nextInt();
+      }catch(Exception e){
+        System.out.println("");
+        System.out.println(e);
+        System.out.println("");
+      }finally{
+        switch(select){
+          case 1:
           System.out.println("");
           System.out.println("攻撃するモンスターの番号を入力してください！");
           System.out.println("");
@@ -87,12 +93,13 @@ public class GoblinCorpsBattleQuest extends Battle{
             }
           }
           monsterSurvivalCount = 0;
-        break;
-        default:
+          break;
+          default:
           System.out.println("");
           System.out.println("正しい番号を入力してください！");
           System.out.println("");
-        break;
+          break;
+        }
       }
     }
     return game;

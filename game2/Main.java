@@ -20,9 +20,16 @@ public class Main{
     while(count == 0){
       System.out.println("行動したいステータスを入力してください！");
       System.out.println("1,クエストの集会所に行く、2武器屋に行く、3教会に行く,4ステータスの確認、5:ゲームをやめる");
-      int select = new java.util.Scanner(System.in).nextInt();
-      switch(select){
-        case 1:
+      int select = 0;
+      try{
+        select = new java.util.Scanner(System.in).nextInt();
+      }catch(Exception e){
+        System.out.println("");
+        System.out.println(e);
+        System.out.println("");
+      }finally{
+        switch(select){
+          case 1:
           System.out.println("");
           System.out.println("集会所にいきます~");
           System.out.println("");
@@ -32,8 +39,8 @@ public class Main{
           }
           facility.RequestForm r = new facility.RequestForm();
           r.requestForm(h);
-        break;
-        case 2:
+          break;
+          case 2:
           System.out.println("");
           System.out.println("武器屋に行く~");
           System.out.println("");
@@ -43,8 +50,8 @@ public class Main{
           }
           facility.WeaponShop d = new facility.WeaponShop();
           d.weaponShopping(h);
-        break;
-        case 3:
+          break;
+          case 3:
           System.out.println("");
           System.out.println("教会に行く!!!");
           System.out.println("");
@@ -54,8 +61,8 @@ public class Main{
           }
           facility.Church c = new facility.Church();
           c.hpRecovery(h);
-        break;
-        case 4:
+          break;
+          case 4:
           System.out.println("現在のステータスを表示します");
           System.out.println("");
           System.out.println("================================================================================================================================================");
@@ -65,18 +72,19 @@ public class Main{
           + (h.getSword()).getName());
           System.out.println("================================================================================================================================================");
           System.out.println("");
-        break;
-        case 5:
+          break;
+          case 5:
           System.out.println("");
           System.out.println("");
           System.out.println("ゲームをやめます");
           System.exit(0);
-        break;
-        default:
+          break;
+          default:
           System.out.println("");
           System.out.println("正しい番号を入力してください！");
           System.out.println("");
-        break;
+          break;
+        }
       }
     }
   }

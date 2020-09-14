@@ -27,9 +27,16 @@ public class GoblinBattle extends Battle{
       System.out.println("");
       System.out.println("戦闘コマンドを選択してください");
       System.out.println("1:闘う");
-      int select = new java.util.Scanner(System.in).nextInt();
-      switch(select){
-        case 1:
+      int select = 0;
+      try{
+        select = new java.util.Scanner(System.in).nextInt();
+      }catch(Exception e){
+        System.out.println("");
+        System.out.println(e);
+        System.out.println("");
+      }finally{
+        switch(select){
+          case 1:
           h.attack(g);
           g.attack(h);
           if(h.getHP() <= 0){
@@ -59,12 +66,13 @@ public class GoblinBattle extends Battle{
             game = 1;
             count = 1;
           }
-        break;
-        default:
+          break;
+          default:
           System.out.println("");
           System.out.println("正しい番号を入力してください！");
           System.out.println("");
-        break;
+          break;
+        }
       }
     }
     return game;

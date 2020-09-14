@@ -33,9 +33,16 @@ public class Church extends Facility{
       System.out.println("");
       System.out.println("３：100G納めてHPを200回復する");
       System.out.println("");
-      int select = new java.util.Scanner(System.in).nextInt();
-      switch(select){
-        case 1:
+      int select = 0;
+      try{
+        select = new java.util.Scanner(System.in).nextInt();
+      }catch(Exception e){
+        System.out.println("");
+        System.out.println(e);
+        System.out.println("");
+      }finally{
+        switch(select){
+          case 1:
           if(h.getMoney() <= 10){
             System.out.println("所持金がたりません.....");
             System.out.println("お金を増やしてから購入してください！");
@@ -47,8 +54,8 @@ public class Church extends Facility{
             h.hpMoneyRecovery(50);
             System.out.println("");
           }
-        break;
-        case 2:
+          break;
+          case 2:
           if(h.getMoney() <= 50){
             System.out.println("所持金がたりません.....");
             System.out.println("お金を増やしてから購入してください！");
@@ -60,8 +67,8 @@ public class Church extends Facility{
             h.hpMoneyRecovery(100);
             System.out.println("");
           }
-        break;
-        case 3:
+          break;
+          case 3:
           if(h.getMoney() <= 100){
             System.out.println("所持金がたりません.....");
             System.out.println("お金を増やしてから購入してください！");
@@ -73,18 +80,19 @@ public class Church extends Facility{
             h.hpMoneyRecovery(200);
             System.out.println("");
           }
-        break;
+          break;
           case 10:
           System.out.println("");
           System.out.println("村に戻ります！");
           System.out.println("");
           count += 1;
-        break;
-        default:
+          break;
+          default:
           System.out.println("");
           System.out.println("正しい番号を入力してください！");
           System.out.println("");
-        break;
+          break;
+        }
       }
     }
   }

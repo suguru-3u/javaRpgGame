@@ -53,9 +53,16 @@ public class RequestForm extends Facility{
       System.out.println("");
       System.out.println("");
       System.out.println("受けたいクエストがある場合はクエスト番号を入力してください！");
-      int select = new java.util.Scanner(System.in).nextInt();
-      switch(select){
-        case 1:
+      int select = 0;
+      try{
+        select = new java.util.Scanner(System.in).nextInt();
+      }catch(Exception e){
+        System.out.println("");
+        System.out.println(e);
+        System.out.println("");
+      }finally{
+        switch(select){
+          case 1:
           System.out.println("");
           System.out.println("");
           System.out.println("こちらのクエストはゴブリン一体の討伐クエストでございます。");
@@ -63,82 +70,99 @@ public class RequestForm extends Facility{
           System.out.println(this.quest1 + "でお間違いないでしょうか？");
           System.out.println("");
           System.out.println("よろしければ1を入力してください、戻る場合は一意外を入力してください。");
-          int number1 = new java.util.Scanner(System.in).nextInt();
-          if(number1 == 1){
-            System.out.println("クエストを始めます！");
-            try {
-              Thread.sleep(1000);
-            } catch (InterruptedException e) {
-            }
-            battle.GoblinBattle goblin = new battle.GoblinBattle();
-            int game = goblin.monsterBattle(h);
-            if(game == 1){
-              System.out.println("クエストに成功しました！");
+          int number1 = 0;
+          try{
+            number1 = new java.util.Scanner(System.in).nextInt();
+          }catch(Exception e){
+            System.out.println("");
+            System.out.println(e);
+            System.out.println("");
+          }finally{
+            if(number1 == 1){
+              System.out.println("クエストを始めます！");
+              try {
+                Thread.sleep(1000);
+              } catch (InterruptedException e) {
+              }
+              battle.GoblinBattle goblin = new battle.GoblinBattle();
+              int game = goblin.monsterBattle(h);
+              if(game == 1){
+                System.out.println("クエストに成功しました！");
+              }else{
+                System.out.println("クエストに失敗しました！");
+              }
             }else{
-              System.out.println("クエストに失敗しました！");
+              System.out.println("集会所に戻ります");
             }
-          }else{
-            System.out.println("集会所に戻ります");
           }
-        break;
-        case 2:
-        System.out.println("");
-        System.out.println("");
-        System.out.println("こちらのクエストは複数のゴブリン討伐クエストでございます。");
-        System.out.println("");
-        System.out.println(this.quest2 + "でお間違いないでしょうか？");
-        System.out.println("");
-        System.out.println("よろしければ1を入力してください、戻る場合は1意外を入力してください。");
-        int number2 = new java.util.Scanner(System.in).nextInt();
-        if(number2 == 1){
-          System.out.println("クエストを始めます！");
-          try {
-            Thread.sleep(1000);
-          } catch (InterruptedException e) {
+          break;
+          case 2:
+          System.out.println("");
+          System.out.println("");
+          System.out.println("こちらのクエストは複数のゴブリン討伐クエストでございます。");
+          System.out.println("");
+          System.out.println(this.quest2 + "でお間違いないでしょうか？");
+          System.out.println("");
+          System.out.println("よろしければ1を入力してください、戻る場合は1意外を入力してください。");
+          int number2 = 0;
+          try{
+            number2 = new java.util.Scanner(System.in).nextInt();
+          }catch(Exception e){
+            System.out.println("");
+            System.out.println(e);
+            System.out.println("");
+          }finally{
+            if(number2 == 1){
+              System.out.println("クエストを始めます！");
+              try {
+                Thread.sleep(1000);
+              } catch (InterruptedException e) {
+              }
+              battle.GoblinCorpsBattleQuest goblins = new battle.GoblinCorpsBattleQuest();
+              int game = goblins.monsterBattle(h);
+              if(game == 1){
+                System.out.println("クエストに成功しました！");
+              }else{
+                System.out.println("クエストに失敗しました！");
+              }
+            }else{
+              System.out.println("集会所に戻ります");
+            }
           }
-          battle.GoblinCorpsBattleQuest goblins = new battle.GoblinCorpsBattleQuest();
-          int game = goblins.monsterBattle(h);
-          if(game == 1){
-            System.out.println("クエストに成功しました！");
-          }else{
-            System.out.println("クエストに失敗しました！");
-          }
-        }else{
-          System.out.println("集会所に戻ります");
-        }
-        break;
-        case 3:
+          break;
+          case 3:
           if(h.getLevel() < 5){
             System.out.println("");
             System.out.println("正しい番号を入力してください！");
             System.out.println("");
           }
-        break;
-        case 4:
+          break;
+          case 4:
           if(h.getLevel() < 8){
             System.out.println("");
             System.out.println("正しい番号を入力してください！");
             System.out.println("");
           }
-        break;
-        case 5:
+          break;
+          case 5:
           if(h.getLevel() < 10){
             System.out.println("");
             System.out.println("正しい番号を入力してください！");
             System.out.println("");
           }
-        break;
-        case 10:
+          break;
+          case 10:
           System.out.println("");
           System.out.println("村に戻ります！");
           System.out.println("");
           count += 1;
-        break;
-        default:
+          break;
+          default:
           System.out.println("");
           System.out.println("正しい番号を入力してください！");
           System.out.println("");
-        break;
+          break;
+        }
       }
     }
   }
