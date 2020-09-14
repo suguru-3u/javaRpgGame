@@ -1,28 +1,24 @@
 package item;
 
-public class Weapon extends Item{
+public abstract class Weapon extends Item{
   // フィールド
-  int offensiveValue;
-  int defenseValue;
+  int offensivePower;
+  int defensePower;
 
   // コンストラクト
-  public Weapon(String name,int offensiveValue,int defenseValue){
+  public Weapon(String name,int price){
     super.name = name;
-    this.offensiveValue = offensiveValue;
-    this.defenseValue = defenseValue;
+    super.price = price;
   }
 
-  // 名前ゲット
-  public String getName(){
-    return super.name;
-  }
-
+  // メソッド
   // 攻撃力ゲット
-  public int getOffensiveValue(){
-    return this.offensiveValue;
+  public int getOffensivePower(){
+    return this.offensivePower;
   }
+
   // 防御力ゲット
-  public int getDefenseValue(){
-    return this.defenseValue;
+  public int getDefensePower(){
+    return this.defensePower;
   }
 }
