@@ -4,7 +4,7 @@ import character.*;
 public class Church extends Facility{
   // コンストラクト
   public Church(){
-    super.name = "教会";
+    setName("教会");
   }
 
   // メソッド
@@ -14,7 +14,7 @@ public class Church extends Facility{
 
     System.out.println("");
     System.out.println("");
-    System.out.println("ようこそ," + super.name);
+    System.out.println("ようこそ," + getName());
     System.out.println("");
     System.out.println("");
     System.out.println("ここではHPを回復できます。ただし対価を支払って頂きますがね....");

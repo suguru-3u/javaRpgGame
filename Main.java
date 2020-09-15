@@ -7,7 +7,7 @@ public class Main{
   public static void main(String[] args){
     // 勇者召喚
     item.Sword b = new item.Sword("錆びたの剣",0,0,0);
-    Hero h = new Hero("あやか",b);
+    Hero h = new Hero("Aさん",b);
     // 冒険のループ変数
     int count = 0;
 
@@ -64,14 +64,7 @@ public class Main{
           break;
           case 4:
           System.out.println("現在のステータスを表示します");
-          System.out.println("");
-          System.out.println("================================================================================================================================================");
-          System.out.println("レベル： " + h.getLevel() + "  現在のHP： " + h.getHP() + "  最大HP： " + h.getMaxHP()
-          + "  攻撃力： " + h.getOffensivePower() + "  防御力： " + h.getDefensePower() + "  現在の経験値： " + h.getExperiencePoint()
-          + "  レベルアップ経験値： " + h.getLevelUpValue() + "  所持金： " + h.getMoney() + "  装備武器： "
-          + (h.getSword()).getName());
-          System.out.println("================================================================================================================================================");
-          System.out.println("");
+          h.status();
           break;
           case 5:
           System.out.println("");

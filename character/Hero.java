@@ -92,6 +92,18 @@ public class Hero extends Character{
       return this.sword;
   }
 
+  // ステータス表示
+  public void status(){
+    System.out.println("");
+    System.out.println("================================================================================================================================================");
+    System.out.println("レベル： " + getLevel() + "  現在のHP： " + getHP() + "  最大HP： " + getMaxHP()
+    + "  攻撃力： " + getOffensivePower() + "  防御力： " + getDefensePower() + "  現在の経験値： " + getExperiencePoint()
+    + "  レベルアップ経験値： " + getLevelUpValue() + "  所持金： " + getMoney() + "  装備武器： "
+    + (getSword()).getName());
+    System.out.println("================================================================================================================================================");
+    System.out.println("");
+  }
+
   // 攻撃
   public void attack(Monster m){
     if(m.getDefensePower() >= this.offensivePower){
